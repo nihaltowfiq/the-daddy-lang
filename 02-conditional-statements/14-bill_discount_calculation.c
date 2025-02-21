@@ -1,5 +1,10 @@
 /*
-
+  A store offers the following discounts based on the total purchase amount:
+  Purchase Amount Discount:
+    Above Tk. 5000 10%
+    Tk. 3000-5000 5%
+    Below Tk. 3000 No Discount
+  Write a program that calculates the discounted amount.
 */
 
 #include <stdio.h>
