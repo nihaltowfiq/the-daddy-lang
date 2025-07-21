@@ -1,3 +1,9 @@
+/*
+  Create a basic singly linked list structure in C. Define a structure for a node that holds an
+  integer value and a pointer to the next node. Implement functions to add nodes at the
+  beginning and end of the list.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
