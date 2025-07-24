@@ -2,6 +2,14 @@
   Create a basic singly linked list structure in C. Define a structure for a node that holds an
   integer value and a pointer to the next node. Implement functions to add nodes at the
   beginning and end of the list.
+
+  Sample Input:
+  - Add 5 to the beginning.
+  - Add 10 to the end.
+  - Add 15 to the end.
+
+  Sample Output:
+  Linked List: 5 -> 10 -> 15
 */
 
 #include <stdio.h>
