@@ -54,6 +54,34 @@ void insertAfterValue(int v, int specific) {
   }
 }
 
+void deleteNodeWithValue(int v) {
+  struct Node *temp = head;
+  int i = 0;
+
+  struct Node *prev = NULL;
+
+  while (temp != NULL) {
+    if (temp->value == v) {
+      if (prev == NULL) {
+        head = head->next;
+        if (temp == tail) {
+          tail = NULL;
+        }
+      } else {
+        prev->next = temp->next;
+        if (temp == tail) {
+          tail = prev;
+        }
+      }
+      break;
+    }
+
+    prev = temp;
+    temp = temp->next;
+    i++;
+  }
+}
+
 void insertAtPosition(int v, int position) {
   struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
   newNode->value = v;
@@ -77,6 +105,10 @@ void insertAtPosition(int v, int position) {
     temp = temp->next;
     i++;
   }
+
+  if (temp->next == NULL) {
+    tail = newNode;
+  }
 }
 
 void deleteNodePosition(int position) {
@@ -91,37 +123,22 @@ void deleteNodePosition(int position) {
   while (temp != NULL) {
     if (i == position - 1) {
       temp->next = temp->next->next;
+      free(temp->next);
       break;
     }
     temp = temp->next;
     i++;
   }
-}
 
-void deleteNodeWithValue(int v) {
-  struct Node *temp = head;
-  int i = 0;
-
-  struct Node *tempItem = NULL;
-
-  while (temp != NULL) {
-    if (temp->value == v && tempItem == NULL) {
-      head = head->next;
-      break;
-    } else if (temp->value == v && tempItem != NULL) {
-      tempItem->next = temp->next;
-      break;
-    }
-
-    tempItem = temp;
-    temp = temp->next;
-    i++;
+  if (temp->next == NULL) {
+    tail = temp;
   }
 }
 
 void printList() {
-  struct Node *temp = head;
   int i = 0;
+  struct Node *temp = head;
+
   while (temp != NULL) {
     printf("%d->", temp->value);
     temp = temp->next;
