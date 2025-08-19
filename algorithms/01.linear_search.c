@@ -22,7 +22,7 @@ int linear_search(int arr[], int size, int target) {
 
   for (int i = 0; i < size; i++) {
     if (arr[i] == target) {
-      result = 1;
+      result = i;
       break;
     }
   }
@@ -32,13 +32,13 @@ int linear_search(int arr[], int size, int target) {
 
 int main() {
   int arr[1000] = {22, 13, 45, 67, 13, 89, 76};
-  int target = 10;
+  int target = 89;
 
   int size = sizeof(arr) / sizeof(arr[0]);
 
-  int isFound = linear_search(arr, size, target);
+  int index = linear_search(arr, size, target);
 
-  printf("isFound: %d", isFound);
+  printf("Index: %d", index);
 
   return 0;
 }
