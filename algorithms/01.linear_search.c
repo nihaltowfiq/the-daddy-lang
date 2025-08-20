@@ -31,14 +31,17 @@ int linear_search(int arr[], int size, int target) {
 }
 
 int main() {
-  int arr[1000] = {22, 13, 45, 67, 13, 89, 76};
-  int target = 89;
-
+  int arr[] = {22, 13, 45, 67, 13, 89, 76};
+  int target = 13;
   int size = sizeof(arr) / sizeof(arr[0]);
 
   int index = linear_search(arr, size, target);
 
-  printf("Index: %d", index);
+  if (index == -1) {
+    printf("%d\n", index);
+  } else {
+    printf("Index: %d\n", index);
+  }
 
   return 0;
 }
