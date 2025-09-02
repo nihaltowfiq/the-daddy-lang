@@ -1,2 +1,9 @@
-# Ignore all .exe files
-**/*.exe 
+# Ignore everything
+*
+**/*
+
+# Exclude (do NOT ignore) these file types
+!**/*.c
+!**/*.json
+!**/*.md
+!**/.clang-format
