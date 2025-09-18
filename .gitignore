@@ -2,6 +2,10 @@
 *
 **/*
 
+# But do NOT ignore any directories (so negation rules below work)
+!*/
+!**/
+
 # Exclude (do NOT ignore) these file types
 !**/*.c
 !**/*.json
